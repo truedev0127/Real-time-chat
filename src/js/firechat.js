@@ -95,21 +95,21 @@
     },
 
     // Initialize Firebase listeners and callbacks for the supported bindings.
-    _setupDataEvents: function() {
-      // Monitor connection state so we can requeue disconnect operations if need be.
-      var connectedRef = this._firechatRef.root.child('.info/connected');
-      connectedRef.on('value', function(snapshot) {
-        if (snapshot.val() === true) {
-          // We're connected (or reconnected)! Set up our presence state.
-          for (var path in this._presenceBits) {
-            var op = this._presenceBits[path],
-                ref = op.ref;
+    // _setupDataEvents: function() {
+    //   // Monitor connection state so we can requeue disconnect operations if need be.
+    //   var connectedRef = this._firechatRef.root.child('.info/connected');
+    //   connectedRef.on('value', function(snapshot) {
+    //     if (snapshot.val() === true) {
+    //       // We're connected (or reconnected)! Set up our presence state.
+    //       for (var path in this._presenceBits) {
+    //         var op = this._presenceBits[path],
+    //             ref = op.ref;
 
-            ref.onDisconnect().set(op.offlineValue);
-            ref.set(op.onlineValue);
-          }
-        }
-      }, this);
+    //         ref.onDisconnect().set(op.offlineValue);
+    //         ref.set(op.onlineValue);
+    //       }
+    //     }
+    //   }, this);
 
       // Queue up a presence operation to remove the session when presence is lost
       this._queuePresenceOperation(this._sessionRef, true, null);
