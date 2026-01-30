@@ -1,11 +1,11 @@
-# Firechat [![Version](https://badge.fury.io/gh/firebase%2Ffirechat.svg)](http://badge.fury.io/gh/firebase%2Ffirechat)
+
 
 Firechat is a simple, extensible chat widget powered by
 [Firebase](https://firebase.google.com/?utm_source=firechat). It is intended to serve as a concise,
 documented foundation for chat products built on Firebase. It works out of the box, and is easily
 extended.
 
-## Status
+
 
 ![Status: Archived](https://img.shields.io/badge/Status-Archived-red)
 
